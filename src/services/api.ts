@@ -42,3 +42,4 @@ export const get = <T>(p: string) => api<T>(p);
 export const post = <T>(p: string, body: unknown, idempotencyKey?: string) =>
   api<T>(p, { method: 'POST', body: JSON.stringify(body), idempotencyKey });
 export const patch = <T>(p: string, body: unknown) => api<T>(p, { method: 'PATCH', body: JSON.stringify(body) });
+export const del = (p: string) => api<void>(p, { method: 'DELETE' });

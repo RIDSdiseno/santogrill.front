@@ -9,6 +9,7 @@ const SECCIONES = [
   { to: '/portal/embudo', label: 'Embudo de eventos' },
   { to: '/portal/visitas', label: 'Visitas' },
   { to: '/portal/productos', label: 'Productos' },
+  { to: '/portal/banners', label: 'Banners' },
   { to: '/portal/contenido', label: '🖼 Contenido del sitio' },
 ];
 
