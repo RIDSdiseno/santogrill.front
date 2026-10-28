@@ -14,6 +14,7 @@ import MensajesPage from '../pages/portal/MensajesPage';
 import EmbudoPage from '../pages/portal/EmbudoPage';
 import VisitasPage from '../pages/portal/VisitasPage';
 import ContenidoPage from '../pages/portal/ContenidoPage';
+import ProductosPage from '../pages/portal/ProductosPage';
 import NotFoundPage from '../pages/NotFoundPage';
 
 export const router = createBrowserRouter([
@@ -41,7 +42,8 @@ export const router = createBrowserRouter([
       { path: 'mensajes', element: <MensajesPage /> },
       { path: 'embudo', element: <EmbudoPage /> },
       { path: 'visitas', element: <VisitasPage /> },
-      { path: 'contenido', element: <ContenidoPage /> }
+      { path: 'contenido', element: <ContenidoPage /> },
+      { path: 'productos', element: <ProductosPage /> }
     ]
   },
   { path: '*', element: <NotFoundPage /> }

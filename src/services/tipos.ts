@@ -6,6 +6,7 @@ export interface Producto {
   categoria: string;
   precio: number;
   imagen: string | null;
+  activo: boolean;
 }
 
 export interface PedidoItem {
