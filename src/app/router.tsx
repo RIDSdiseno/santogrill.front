@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { SitioLayout } from './SitioLayout';
 import { PortalLayout } from './PortalLayout';
 import { RutaPrivada } from '../features/portal/RutaPrivada';
+import SelectorPage from '../pages/SelectorPage';
 import HomePage from '../pages/HomePage';
 import TiendaPage from '../pages/TiendaPage';
 import AgendaPage from '../pages/AgendaPage';
@@ -21,7 +22,8 @@ export const router = createBrowserRouter([
   {
     element: <SitioLayout />,
     children: [
-      { path: '/', element: <HomePage /> },
+      { path: '/', element: <SelectorPage /> },
+      { path: '/eventos', element: <HomePage /> },
       { path: '/tienda', element: <TiendaPage /> },
       { path: '/agenda', element: <AgendaPage /> },
       { path: '/pago/resultado', element: <PagoResultadoPage /> }

@@ -16,11 +16,17 @@ function NavInterna() {
             <img src="https://res.cloudinary.com/dvqpmttci/image/upload/f_auto,q_auto,h_80/v1791896417/sto1_d3tki1.png" alt="Santo Grill" className="h-10 w-auto" />
           </Link>
           <nav className="ml-auto flex items-center gap-4 text-[12px] display font-bold tracking-[0.09em]">
-            <NavLink to="/" className={({ isActive }) => (isActive ? 'text-brasa' : 'text-hueso hover:text-brasa') + ' hidden sm:block'}>EVENTOS</NavLink>
-            <NavLink to="/tienda" className={({ isActive }) => (isActive ? 'text-brasa' : 'text-hueso hover:text-brasa') + ' hidden sm:block'}>TIENDA ONLINE</NavLink>
-            <NavLink to="/agenda" className={({ isActive }) => (isActive ? 'text-brasa' : 'text-hueso hover:text-brasa') + ' hidden md:block'}>AGENDA</NavLink>
-            <a href="/#galeria" className="hidden lg:block text-hueso hover:text-brasa">GALERÍA</a>
-            <a href="/#nosotros" className="hidden lg:block text-hueso hover:text-brasa">NOSOTROS</a>
+            <NavLink to="/eventos" className={({ isActive }) =>
+              (isActive ? 'text-brasa underline underline-offset-4 decoration-brasa decoration-2' : 'text-hueso hover:text-brasa') + ' hidden sm:block'
+            }>EVENTOS</NavLink>
+            <NavLink to="/tienda" className={({ isActive }) =>
+              (isActive ? 'text-brasa underline underline-offset-4 decoration-brasa decoration-2' : 'text-hueso hover:text-brasa') + ' hidden sm:block'
+            }>TIENDA ONLINE</NavLink>
+            <NavLink to="/agenda" className={({ isActive }) =>
+              (isActive ? 'text-brasa' : 'text-hueso hover:text-brasa') + ' hidden md:block'
+            }>AGENDA</NavLink>
+            <a href="/eventos#galeria" className="hidden lg:block text-hueso hover:text-brasa">GALERÍA</a>
+            <a href="/eventos#nosotros" className="hidden lg:block text-hueso hover:text-brasa">NOSOTROS</a>
             <a href="https://instagram.com/santogrill.cl" target="_blank" rel="noopener noreferrer" className="hidden lg:flex items-center gap-1.5 text-ceniza hover:text-hueso">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
               <span className="hidden xl:block">@santogrill.cl</span>
@@ -33,22 +39,19 @@ function NavInterna() {
                 </span>
               )}
             </Link>
-            <a href="/#cotiza" className="bg-brasa text-carbon px-4 py-2.5 rounded-lg hover:brightness-110 display font-black text-[11px] tracking-[0.08em] whitespace-nowrap">
+            <a href="/eventos#cotiza" className="bg-brasa text-carbon px-4 py-2.5 rounded-lg hover:brightness-110 display font-black text-[11px] tracking-[0.08em] whitespace-nowrap">
               COTIZA TU EVENTO
             </a>
           </nav>
         </div>
       </header>
+
       <main><Outlet /></main>
 
-      {/* Botón flotante WhatsApp */}
-      <a
-        href={`https://wa.me/${WA}?text=${encodeURIComponent('Hola Santo Grill, necesito información 👋')}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 group"
-      >
+      {/* WhatsApp flotante */}
+      <a href={`https://wa.me/${WA}?text=${encodeURIComponent('Hola Santo Grill, necesito información 👋')}`}
+        target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 group">
         <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-carbon border border-borde text-hueso text-[12px] display font-bold tracking-[0.06em] px-3 py-2 rounded-xl whitespace-nowrap shadow-lg">
           Escríbenos
         </span>
@@ -60,20 +63,39 @@ function NavInterna() {
         </div>
       </a>
 
-      <footer className="bg-carbon border-t border-borde/60 py-10" id="nosotros">
-        <div className="mx-auto max-w-[1240px] px-6 grid gap-8 sm:grid-cols-3 text-[15px] text-ceniza">
-          <div>
-            <img src="https://res.cloudinary.com/dvqpmttci/image/upload/f_auto,q_auto,h_112/v1791896417/sto1_d3tki1.png" alt="Santo Grill" className="h-14 w-auto mb-2" />
-            <p className="mt-1">Carnes y envasados · Santiago, Chile</p>
-          </div>
-          <div className="flex flex-col gap-2">
-            <a href={`https://wa.me/${WA}`} target="_blank" rel="noopener noreferrer" className="text-brasa hover:text-brasa-claro">WhatsApp +56 9 6121 3577</a>
-            <a href="https://instagram.com/santogrill.cl" target="_blank" rel="noopener noreferrer" className="text-brasa hover:text-brasa-claro">instagram.com/santogrill.cl</a>
-          </div>
-          <div className="sm:text-right">
-            <Link to="/portal" className="inline-block display font-bold text-[11px] tracking-[0.1em] border border-borde rounded-md px-4 py-2.5 hover:border-brasa hover:text-hueso">
-              PORTAL INTERNO
+      {/* Footer */}
+      <footer className="bg-carbon border-t border-borde/40 pt-14 pb-8" id="nosotros">
+        <div className="mx-auto max-w-[1240px] px-6">
+          <div className="grid gap-8 sm:grid-cols-[auto_1fr_auto_auto]">
+            {/* Logo */}
+            <Link to="/">
+              <img src="https://res.cloudinary.com/dvqpmttci/image/upload/f_auto,q_auto,h_112/v1791896417/sto1_d3tki1.png" alt="Santo Grill" className="h-16 w-auto" />
             </Link>
+            {/* Info */}
+            <div className="flex flex-col gap-1.5 text-[13px] text-ceniza">
+              <a href="https://instagram.com/santogrill.cl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-hueso">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                instagram.com/santogrill.cl
+              </a>
+              <p>Hamburguesas · Parrilla · Eventos · Delivery</p>
+              <p>Santiago, Chile</p>
+            </div>
+            {/* Links */}
+            <div className="flex flex-col gap-2 text-[13px]">
+              <a href={`https://wa.me/${WA}`} target="_blank" rel="noopener noreferrer" className="text-brasa hover:brightness-110">WhatsApp +56 9 6121 3577</a>
+              <a href="/eventos#cotiza" className="text-ceniza hover:text-hueso">Cotiza tu evento</a>
+              <Link to="/tienda" className="text-ceniza hover:text-hueso">Ir a la tienda online</Link>
+              <Link to="/portal" className="inline-flex items-center gap-1.5 display font-bold text-[11px] tracking-[0.08em] border border-borde rounded-md px-3 py-2 hover:border-brasa hover:text-hueso text-ceniza mt-1">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                PORTAL INTERNO
+              </Link>
+            </div>
+            {/* Tagline script */}
+            <div className="flex items-end justify-end">
+              <p className="text-brasa text-xl md:text-2xl" style={{ fontFamily: 'Kaushan Script, cursive' }}>
+                Santo Grill siempre<br />contigo
+              </p>
+            </div>
           </div>
         </div>
       </footer>
