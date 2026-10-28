@@ -14,6 +14,7 @@ import MensajesPage from '../pages/portal/MensajesPage';
 import EmbudoPage from '../pages/portal/EmbudoPage';
 import VisitasPage from '../pages/portal/VisitasPage';
 import ContenidoPage from '../pages/portal/ContenidoPage';
+import NotFoundPage from '../pages/NotFoundPage';
 
 export const router = createBrowserRouter([
   {
@@ -42,5 +43,6 @@ export const router = createBrowserRouter([
       { path: 'visitas', element: <VisitasPage /> },
       { path: 'contenido', element: <ContenidoPage /> }
     ]
-  }
+  },
+  { path: '*', element: <NotFoundPage /> }
 ]);
